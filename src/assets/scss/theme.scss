@@ -1,0 +1,128 @@
+@import "./color.scss";
+
+body.dark {
+  background-color: $black;
+  color: $light-gray;
+
+  .help-container {
+    background-color: $black;
+    box-shadow: -8px 0px 16px rgba(255, 255, 255, 0.2);
+  }
+
+  .help-title {
+    color: $white;
+  }
+  .help-step {
+    color: $white;
+  }
+
+  .help-control {
+    color: $white;
+  }
+  .help-value {
+    color: $white;
+  }
+
+  h2 {
+    color: $light-gray !important;
+  }
+
+  .subtitle2{
+    color: $white !important;
+  }
+
+  .text-link {
+    color: $light-gray !important;
+  }
+
+  .modal-review {
+    background-color: $gray !important;
+    .modal-detail {
+      color: $light-gray !important;
+    }
+  }
+  //ส่วนของ audio
+  .rhap_container {
+    background-color: black !important;
+  }
+  .rhap_time {
+    color: $light-gray !important;
+  }
+  .rhap_play-pause-button {
+    color: $gray !important;
+  }
+  .rhap_progress-bar-show-download {
+    background-color: $gray !important;
+    border: 4px solid $light-gray !important;
+  }
+  .rhap_progress-indicator {
+    background-color: $light-gray !important;
+  }
+  .makeStyles-controls , .makeStyles-postionBottom  {
+    background-color: $black !important;
+  }
+}
+
+body.white {
+  background-color: $light-gray;
+  color: $black;
+
+  h2 {
+    color: $black !important;
+  }
+
+  .help-container {
+    background-color: $light-gray;
+    box-shadow: -8px 0px 16px rgba(0, 0, 0, 0.2);
+  }
+
+  .help-title {
+    color: $black;
+  }
+  .help-step {
+    color: $black;
+  }
+
+  .help-control {
+    color: $black;
+  }
+  .help-value {
+    color: $black;
+  }
+
+  .background-change {
+   background-color: $dark-gray;
+  }
+
+  .nav-title {
+    color: $black !important;
+  }
+
+  .project-title {
+    color: $black !important;
+  }
+
+  .activity-detail {
+    color: $light-gray !important;
+  }
+
+  .title-audio {
+    color: $light-gray !important;
+  }
+
+  .title-mark {
+    color: $black !important;
+  }
+
+  .text-link {
+    color: $black !important;
+  }
+
+  .modal-review {
+    background-color: $light-gray !important;
+    .modal-detail {
+      color: $black !important;
+    }
+  }
+}
+

@@ -1,0 +1,123 @@
+@font-face {
+    font-family: "THSarabun";
+    src: url("./assets/font/THSarabun.ttf") format("opentype"),
+}
+
+body {
+    margin: 0;
+    font-family: "THSarabun" !important;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+    font-family: "THSarabun";
+}
+
+
+/* Typography */
+
+.wh1 {
+    font-family: "THSarabun";
+    font-size: calc(48px + var(--font-scale)) !important;
+    font-weight: lighter;
+}
+
+.wh2 {
+    font-family: "THSarabun";
+    font-size: calc(32px + var(--font-scale)) !important;
+    font-weight: lighter;
+}
+
+.wh3 {
+    font-family: "THSarabun";
+    font-size: calc(24px + var(--font-scale)) !important;
+    font-weight: lighter;
+}
+
+.wh4 {
+    font-family: "THSarabun";
+    font-size: calc(28px + var(--font-scale)) !important;
+    font-weight: lighter;
+}
+
+.wh5 {
+    font-family: "THSarabun";
+    font-size: calc(28px + var(--font-scale)) !important;
+    font-weight: lighter;
+}
+
+.wbp {
+    font-family: "THSarabun";
+    font-size: calc(28px + var(--font-scale)) !important;
+    font-weight: lighter;
+}
+
+.wp1 {
+    font-family: "THSarabun";
+    font-size: calc(28px + var(--font-scale)) !important;
+}
+
+.wp2 {
+    font-family: "THSarabun";
+    font-size: calc(48px + var(--font-scale)) !important;
+}
+
+.wp3 {
+    font-family: "THSarabun";
+    font-size: calc(28px + var(--font-scale)) !important;
+}
+
+.wp4 {
+    font-family: "THSarabun";
+    font-size: calc(28px + var(--font-scale)) !important;
+}
+
+.wa {
+    font-family: "THSarabun";
+    font-size: calc(28px + var(--font-scale)) !important;
+}
+
+.my-0 {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+
+/* green button */
+
+.green-btn {
+    background-color: #219653 !important;
+    color: white !important;
+}
+
+.green-btn:hover {
+    background-color: #1d7d46 !important;
+}
+
+.green-btn:disabled {
+    background-color: rgba(0, 0, 0, 0.12) !important;
+    color: rgba(0, 0, 0, 0.26);
+    box-shadow: none;
+}
+
+
+/* details summary style */
+
+details summary {
+    list-style-type: none;
+}
+
+
+/* Firefox */
+
+details summary::-webkit-details-marker {
+    display: none;
+}
+
+
+/* Chrome */
+
+details summary::marker {
+    display: none;
+}

@@ -1,0 +1,179 @@
+@import "./color.scss";
+@import url("./font-face.scss");
+.input {
+    display: block;
+    // height: 48px;
+    width: 100%;
+    border: none;
+    border-radius: 50px;
+    font-family: "THSarabun";
+    font-size: calc(18px + var(--upfont-input));
+    padding: 10px 32px;
+    color: $light-gray;
+    box-sizing: border-box;
+    &::placeholder {
+        color: $light-gray;
+    }
+    &:disabled {
+        cursor: not-allowed;
+        opacity: 0.3;
+    }
+}
+
+.input.text {
+    background-color: $light-black;
+}
+
+.input.button {
+    cursor: pointer;
+    background-color: $gray;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.row {
+    margin-top: 24px;
+}
+
+.form {
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.form-group {
+    display: flex;
+    margin-top: 20px;
+    align-items: center;
+    .title {
+        width: 40%;
+        text-align: left;
+        margin-right: 12px;
+    }
+    .value {
+        text-align: left;
+        p {
+            margin: 0;
+        }
+    }
+}
+
+.form-action {
+    margin-top: 40px;
+    display: flex;
+    .button {
+        margin: 0 20px;
+    }
+    .button:first-child {
+        margin-left: 0;
+    }
+    .button:last-child {
+        margin-right: 0;
+    }
+}
+
+.hiddenFileInput {
+    padding: 10px 32px;
+    padding-top: 10px;
+    // height: 48px;
+    width: 100%;
+    border: none;
+    border-radius: 50px;
+    font-family: "THSarabun";
+    font-size: calc(18px + var(--upfont-hiddenFileInput));
+    color: $light-gray;
+    background-color: $light-black;
+    position: relative;
+    box-sizing: border-box;
+    input {
+        height: 100%;
+        width: 100%;
+        opacity: 0;
+        cursor: pointer;
+        position: relative;
+        top: -36px;
+    }
+}
+
+.text-group {
+    display: flex;
+    cursor: pointer;
+    .item {
+        margin-right: 20px;
+        display: flex;
+        cursor: pointer;
+    }
+    .symbol {
+        position: relative;
+        margin: 0 10px;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        text-align: center;
+        color: $black;
+    }
+}
+
+.font-size-h4 {
+    font-weight: 300;
+    margin: 0;
+}
+
+.bg-white {
+    background-color: $white;
+}
+
+.bg-black {
+    background-color: $black;
+}
+
+.border-light-gray {
+    border: 1px solid $light-gray;
+}
+
+.modal-review {
+    position: relative;
+    top: 40%;
+    left: 50%;
+    right: auto;
+    bottom: auto;
+    transform: translate(-50%, -50%);
+    background-color: $light-gray;
+    border: 6px solid $dark-gray;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    @media (min-width: 768px) {
+        width: 30vw;
+        padding: 3%;
+    }
+    @media (max-width: 768px) {
+        width: 35vw;
+        padding: 3%;
+    }
+    @media (max-width: 576px) {
+        width: 70vw;
+        padding: 4%;
+    }
+}
+
+.button-modal {
+    cursor: pointer;
+    background-color: $dark-gray;
+    @media (min-width: 768px) {
+        width: 30vw;
+    }
+    @media (max-width: 576px) {
+        width: 70vw;
+    }
+}
+
+.button-modal-noti {
+    width: 50vw;
+    cursor: pointer;
+    background-color: $dark-gray;
+}

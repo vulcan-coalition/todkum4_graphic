@@ -1,0 +1,479 @@
+@import "./color.scss";
+@import "./wheel.scss";
+@import url("./font-face.scss");
+$prefix: "--"; // Prefix string for custom CSS properties
+// Merges a variable name with $prefix
+@function custom-property-name($name) {
+    @return $prefix+$name;
+}
+
+// Defines a custom property
+@mixin define-custom-property($name,
+$value) {
+    #{custom-property-name($name)}: $value;
+}
+
+:root {
+    // Append SASS variables which are desired to be accessible:
+    @include define-custom-property("wheel-size",
+    $wheel-size);
+    @include define-custom-property("wheel-slice-spacing",
+    $wheel-slice-spacing);
+    @include define-custom-property("wheel-border-size",
+    $wheel-border-size);
+    @include define-custom-property("PI",
+    $PI);
+    @include define-custom-property("item-num",
+    $item-num);
+    @include define-custom-property("item-index",
+    $item-index);
+    @include define-custom-property("selected-item",
+    $selected-item);
+    @include define-custom-property("num-turn",
+    $num-turn);
+    @include define-custom-property("spinning-duration",
+    $spinning-duration);
+    @include define-custom-property("reset-duration",
+    $reset-duration);
+    @include define-custom-property("neutral-color",
+    $neutral-color);
+}
+
+.container {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    .help-container {
+        z-index: 10;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        overflow-y: auto;
+        -webkit-transition: all 0.5s ease;
+        -moz-transition: all 0.5s ease;
+        -o-transition: all 0.5s ease;
+        transition: all 0.5s ease;
+        .help-detail {
+            margin: 32px;
+            .help-control {
+                width: 40%;
+                text-align: left;
+                margin-right: 12px;
+            }
+            .help-value {
+                width: 60%;
+                text-align: left;
+                p {
+                    margin: 0;
+                }
+            }
+        }
+    }
+    //สำหรับหน้า batch
+    .background-change {
+        position: absolute;
+        width: 50%;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        background-color: $black;
+    }
+    //สำหรับหน้า login
+    .header-login {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        margin: 32px 64px 64px 64px;
+        .logo {
+            @media (min-width: 768px) {
+                height: 6vw;
+            }
+            @media (max-width: 576px) {
+                height: 20vw;
+            }
+        }
+    }
+    //สำหรับหน้าหลังจาก login ทั้งหมด
+    .header {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 32px 64px 64px 64px;
+        .logo-link>img {
+            height: 100px;
+        }
+        .nav {
+            display: flex;
+            .nav-link {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                margin: 0 16px;
+                text-decoration: none;
+                color: $light-gray;
+                cursor: pointer;
+                .nav-img {
+                    height: 70px;
+                    width: 70px;
+                    border-radius: 50%;
+                    object-fit: cover;
+                }
+                .nav-title {
+                    margin-top: 8px;
+                    font-size: calc(24px + var(--upfont-nav));
+                }
+            }
+            .nav-link:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+    //สำหรับทุกหน้า ที่มีการใช้งาน
+    .login-container {
+        text-align: center;
+        margin: auto;
+        padding-top: 5%;
+        @media (min-width: 768px) {
+            width: 30%;
+        }
+        @media (max-width: 576px) {
+            width: 70vw;
+        }
+    }
+    .content {
+        position: fixed;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        .dashboard-container {
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            .project {
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+                margin: 40px;
+                text-decoration: none;
+                .project-img {
+                    height: 200px;
+                }
+                .project-title {
+                    font-family: "Anakotmai-bold";
+                    font-size: calc(24px + var(--upfont-project));
+                    color: $light-gray;
+                }
+            }
+        }
+        .profile-container {
+            position: relative;
+            width: 75%;
+            display: flex;
+            justify-content: center;
+            margin: auto;
+            .profile-detail {
+                width: 70%;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                margin-right: 20px;
+            }
+            .profile-image {
+                width: 300px;
+                height: 300px;
+                border-radius: 50%;
+                object-fit: cover;
+            }
+        }
+        .activity-container {
+            width: 50%;
+            padding-left: 3%;
+            padding-right: 3%;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            .activity-img {
+                height: 80px;
+            }
+            .activity-detail {
+                font-family: "Anakotmai-bold";
+                font-size: calc(24px + var(--upfont-activity));
+                margin: 0 40px;
+            }
+        }
+        .step-container {
+            display: flex;
+            width: 50%;
+            margin-top: 20px;
+            padding-left: 3%;
+            padding-right: 3%;
+            box-sizing: border-box;
+            .button {
+                background-color: $gray;
+                margin: 0 8px;
+                width: calc(100% / 3);
+            }
+        }
+        .batch-container {
+            display: flex;
+            .audio-container {
+                width: 50%;
+                text-align: center;
+                padding: 3%;
+                box-sizing: border-box;
+                .control-audio {
+                    display: flex;
+                    justify-content: center;
+                    margin-top: 32px;
+                    .control-img {
+                        height: 120px;
+                        margin: 0 20px;
+                    }
+                }
+            }
+            .mark-container {
+                width: 50%;
+                text-align: center;
+                padding: 3%;
+                box-sizing: border-box;
+                .input-container {
+                    height: 300px;
+                    overflow: auto;
+                }
+            }
+            .new-mark-container {
+                width: 50%;
+                text-align: center;
+                padding: 3%;
+                box-sizing: border-box;
+                .input-container {
+                    height: 300px;
+                    overflow: auto;
+                }
+            }
+        }
+    }
+    //สำหรับทุกหน้า ที่มีการใช้งาน
+    .footer {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        margin-top: 64px;
+        margin-bottom: 32px;
+        position: absolute;
+        width: 100%;
+        bottom: 0;
+        .description {
+            @media (min-width: 768px) {
+                margin: 0 64px;
+            }
+            @media (max-width: 576px) {
+                margin: 0 auto;
+                padding: 1px;
+            }
+            @media (max-width: 320px) {
+                display: none;
+            }
+        }
+    }
+}
+
+.m0 {
+    box-sizing: border-box;
+    margin: 0;
+    cursor: pointer;
+}
+
+@media screen and (max-height: 1200px) {
+    .xl {
+        margin: 25% auto;
+    }
+    .batch {
+        margin: 10% auto;
+    }
+}
+
+@media screen and (max-height: 1024px) {
+    .xl {
+        margin: 20% auto;
+    }
+    .batch {
+        margin: 10% auto;
+    }
+}
+
+@media screen and (max-height: 900px) {
+    .xl {
+        margin: 15% auto;
+    }
+    .batch {
+        margin: 6% auto;
+    }
+}
+
+@media screen and (max-height: 800px) {
+    .xl {
+        margin: 12% auto;
+    }
+    .batch {
+        margin: 8% auto;
+    }
+}
+
+@media screen and (max-height: 768px) {
+    .xl {
+        margin: 12% auto;
+    }
+    .batch {
+        margin: 5% auto;
+    }
+}
+
+@media screen and (max-height: 720px) {
+    .xl {
+        margin: 5% auto;
+    }
+    .batch {
+        margin: 0 auto;
+    }
+}
+
+// style spin wheel
+.wheel-container {
+    display: block;
+    position: relative;
+    box-sizing: content-box;
+    width: ($wheel-size + 2 * $wheel-border-size);
+    height: ($wheel-size + 2 * $wheel-border-size);
+    padding: 3px;
+    margin-bottom: 20px;
+    background-color: $neutral-color;
+    border: solid $wheel-color 3px;
+    border-radius: 50%;
+    user-select: none;
+    -webkit-box-shadow: 0px 1px 8px -2px rgba(0, 0, 0, 0.95);
+    box-shadow: 0px 1px 8px -2px rgba(0, 0, 0, 0.95);
+    transform: rotate(-90deg);
+}
+
+// arrow spin
+.wheel-container {
+    &::before,
+    &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        height: 0;
+        width: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 2;
+        border: solid transparent 20px;
+        border-left-width: 0;
+    }
+}
+
+.wheel-container {
+    &::after {
+        display: block;
+        position: absolute;
+        content: url(../images/spinWheel//SpinArrow.svg);
+        z-index: 2;
+        top: 45%;
+        left: 55%;
+        transform: rotate(90deg);
+    }
+}
+
+.wheel {
+    display: block;
+    position: relative;
+    box-sizing: content-box;
+    margin: auto;
+    width: $wheel-size;
+    height: $wheel-size;
+    overflow: hidden;
+    border-radius: 50%;
+    border: solid $wheel-color $wheel-border-size;
+    background-color: $wheel-color;
+    transition: transform $reset-duration;
+    transform: rotate(0deg);
+}
+
+.wheel.spinning {
+    transition: transform $spinning-duration;
+    transform: rotate( calc( var(--num-turn) * 360deg + (-360deg * var(--selected-item) / var(--item-num))));
+}
+
+// element of wheel
+.wheel-item {
+    display: block;
+    position: absolute;
+    box-sizing: border-box;
+    top: 50%;
+    left: 50%;
+    width: 50%;
+    transform-origin: center left;
+    transform: translateY(-50%) rotate(calc(var(--item-index) * (360deg / var(--item-num))));
+    color: $neutral-color;
+    text-align: right;
+    padding: 0 25px 0 50px;
+    font-family: $wheel-font;
+}
+
+// scope of each item
+.wheel-item {
+    &::before {
+        content: " ";
+        display: block;
+        position: absolute;
+        box-sizing: border-box;
+        z-index: -1;
+        width: 0;
+        height: 0;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding-left: 0px;
+        opacity: 1;
+        --slice-max-width: calc(var(--PI) * var(--wheel-size) + var(--wheel-size));
+        --slice-width: calc( (var(--slice-max-width) / var(--item-num)) - var(--wheel-slice-spacing));
+        border: solid transparent calc(var(--slice-width) / 2);
+        border-left: solid transparent 0;
+        border-right: solid var(--neutral-color) calc(var(--wheel-size) / 2);
+    }
+}
+
+.image-coins {
+    transform: rotate(90deg);
+}
+
+.btn-spin {
+    text-align: center;
+    cursor: pointer;
+    width: 542px;
+    height: 103px;
+    background: #f2c94c;
+    border-radius: 20px;
+    border: none;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 64px;
+    line-height: 99px;
+    color: #be610e;
+    box-shadow: inset 0px -1px 0px #f2994a, 0px 6px 0px #be610e;
+}
+
+.btn-spin {
+    &.active {
+        box-shadow: inset 0px 1px 0px #f2994a, inset 0px 1px 0px #be610e;
+    }
+    &:active {
+        box-shadow: inset 0px 1px 0px #f2994a, inset 0px 1px 0px #be610e;
+    }
+}

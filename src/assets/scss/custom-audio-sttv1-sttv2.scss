@@ -1,0 +1,67 @@
+@import "./color.scss";
+.rhap_container {
+    background-color: transparent;
+    box-shadow: unset;
+}
+
+.rhap_progress-filled {
+    background-color: #219653 !important;
+}
+
+body.light {
+    div#cover-audio {
+        .rhap_container {
+            background-color: transparent;
+            box-shadow: unset;
+        }
+        .rhap_time {
+            color: $light-gray !important;
+            font-size: 24px;
+        }
+        .rhap_play-pause-button {
+            color: $gray !important;
+        }
+        .rhap_progress-bar-show-download {
+            background-color: $light-gray !important;
+            border: 4px solid $gray !important;
+        }
+        .rhap_progress-indicator {
+            background-color: $gray !important;
+        }
+        .rhap_progress-filled {
+            background-color: #219653 !important;
+        }
+        .rhap_download-progress {
+            background-color: $gray !important;
+        }
+        .makeStyles-postionBottom {
+            background-color: $dark-gray !important;
+        }
+        .makeStyles-controls {
+            background-color: $dark-gray !important;
+        }
+    }
+}
+
+body.dark {
+    div#cover-audio {
+        .rhap_time {
+            color: $light-gray !important;
+            font-size: 24px;
+        }
+        .rhap_play-pause-button {
+            color: $gray !important;
+        }
+        .rhap_progress-bar-show-download {
+            background-color: $gray !important;
+            border: 4px solid $light-gray !important;
+        }
+        .rhap_progress-indicator {
+            background-color: $light-gray !important;
+        }
+        .makeStyles-controls,
+        .makeStyles-postionBottom {
+            background-color: $black !important;
+        }
+    }
+}

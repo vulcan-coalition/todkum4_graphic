@@ -1,0 +1,66 @@
+@import "./color.scss";
+.rhap_progress-filled {
+    background-color: #219653;
+    border-radius: 20px;
+}
+
+.rhap_download-progress {
+    background-color: transparent;
+}
+
+div#audio-control {
+    .rhap_container {
+        background-color: transparent !important;
+        box-shadow: unset !important;
+    }
+    .rhap_time {
+        color: $light-gray !important;
+        font-size: 24px;
+    }
+    .rhap_progress-bar-show-download {
+        height: 8px;
+        border-radius: 20px;
+    }
+    .rhap_progress-indicator {
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        margin-left: -4px;
+        top: -4px;
+    }
+    .rhap_container {
+        background-color: transparent;
+        box-shadow: none;
+        padding: 0;
+    }
+    .rhap_progress-filled {
+        background-color: #219653;
+        border-radius: 20px;
+    }
+    .rhap_download-progress {
+        border-radius: 20px;
+    }
+}
+
+body.dark {
+    div#audio-control {
+        .rhap_time {
+            color: $light-gray !important;
+            font-size: 24px;
+        }
+        .rhap_progress-bar-show-download {
+            background-color: #494949 !important;
+        }
+        .rhap_progress-indicator {
+            background-color: $light-gray !important;
+            border: 2px solid #c4c4c4;
+        }
+        .rhap_download-progress {
+            background-color: #494949;
+        }
+        .rhap_progress-filled {
+            background-color: #219653;
+            border-radius: 20px;
+        }
+    }
+}

@@ -1,0 +1,63 @@
+@import "./color.scss";
+
+.rhap_container {
+  box-shadow: unset;
+}
+
+
+div#cover-audio {
+  .rhap_container {
+    display: flex;
+    flex-direction: column-reverse;
+    box-shadow: unset;
+    min-height: 0px;
+    padding: 0px;
+  }
+
+  .rhap_progress-bar-show-download {
+    height: 36px;
+    border-radius: 20px;
+  }
+
+  .rhap_progress-indicator {
+    width: 14px;
+    height: 15px;
+    border-radius: 50%;
+    border-color: 1px solid black;
+    margin-left: -4px;
+    top: -5px;
+  }
+
+  .rhap_progress-filled {
+    background-color: #219653 !important;
+    border-radius: 20px;
+  }
+
+  .rhap_download-progress {
+    background-color: #ededed;
+    opacity: 0.3;
+    border-radius: 20px;
+  }
+
+  .rhap_progress-section {
+    position: relative;
+  }
+
+  .rhap_current-time {
+    padding: 8px;
+  }
+
+  .rhap_total-time {
+    padding: 8px;
+  }
+
+  .rhap_progress-container {
+    margin: 0;
+    height: 0;
+  }
+}
+
+.rhap_progress-filled {
+  background-color: #219653 !important;
+  border-radius: 20px;
+}
