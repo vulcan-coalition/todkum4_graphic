@@ -1,6 +1,6 @@
 @font-face {
     font-family: "THSarabun";
-    src: url("./assets/font/THSarabun.ttf") format("opentype"),
+    src: local('THSarabun'), local('THSarabun'), url('./assets/font/THSarabun.ttf') format('truetype');
 }
 
 body {

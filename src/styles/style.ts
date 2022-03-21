@@ -74,7 +74,7 @@ export const ConfirmLabelButton = withStyles((theme: Theme) => ({
 export const LogInButton = withStyles((theme: Theme) => ({
   root: {
     borderRadius: "50px",
-    fontFamily: "Anakotmai-medium",
+    fontFamily: "THSarabun",
     fontSize: "calc(18px + var(--upfont - input))",
     padding: "10px 32px",
     color: localStorage.getItem("theme") === "dark"
